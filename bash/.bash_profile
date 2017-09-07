@@ -37,14 +37,14 @@ shopt -s dirspell 2> /dev/null
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
 for option in autocd globstar; do
-	shopt -s "$option" 2> /dev/null;
+  shopt -s "$option" 2> /dev/null;
 done;
 
 # Add tab completion for many Bash commands.
 if hash brew 2>/dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-	source "$(brew --prefix)/share/bash-completion/bash_completion";
+  source "$(brew --prefix)/share/bash-completion/bash_completion";
 elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion;
+  source /etc/bash_completion;
 fi;
 
 # homebrew completion
@@ -59,7 +59,7 @@ fi;
 
 # Enable tab completion for `g` by marking it as an alias for `git`.
 if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-	complete -o default -o nospace -F _git g;
+  complete -o default -o nospace -F _git g;
 fi;
 
 # hub completion

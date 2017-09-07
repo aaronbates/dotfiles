@@ -25,7 +25,7 @@ defaultdotfilesdir="$HOME/dotfiles"
 dotfilesdir=$(pwd)
 
 #if is_git_repository; then
-#	git pull origin master # pull repo.
+# git pull origin master # pull repo.
 #fi;
 
 warn "\e[1mEnsure your mac system is fully up-to-date and only\e[0m"
@@ -56,9 +56,9 @@ tput bel
 
 ask_for_confirmation "Ready?";
 if answer_is_yes; then
-	ok "\e[1mLet's go.\e[0m"
+  ok "\e[1mLet's go.\e[0m"
 else
-	cancelled "\e[1mExit.\e[0m"
+  cancelled "\e[1mExit.\e[0m"
   exit -1;
 fi;
 
@@ -100,8 +100,8 @@ source ./setup/brew.sh
 
 # brew is required to continue, exit out otherwise.
 if ! $brewinstall;  then
-	cancelled "\e[1mCannot proceed. Exit.\e[0m"
-	exit -1
+  cancelled "\e[1mCannot proceed. Exit.\e[0m"
+  exit -1
 fi;
 
 # Node setup

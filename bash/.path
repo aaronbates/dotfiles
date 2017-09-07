@@ -24,7 +24,7 @@ PATH="/usr/local/aws/bin:$PATH"
 
 # Source local path config
 if [ -e "$HOME/.path.local" ]; then
-	source "$HOME/.path.local"
+  source "$HOME/.path.local"
 fi;
 
 # Dedupe using awk.
