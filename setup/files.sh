@@ -3,12 +3,12 @@ debug=${1:-false}
 
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
-  source ./lib.sh
+	source ./lib.sh
 fi;
 
 # Set dotfilesdir var if not declared.
 if [ -z ${dotfilesdir+x} ]; then
-  dotfilesdir="$(dirname "$(pwd)")"
+	dotfilesdir="$(dirname "$(pwd)")"
 fi;
 
 botintro "Sourcing directories and files to handle."

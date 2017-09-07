@@ -3,7 +3,7 @@ debug=${1:-false}
 
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
-  source ./lib.sh
+	source ./lib.sh
 fi;
 
 action "Setting up .nanorc"

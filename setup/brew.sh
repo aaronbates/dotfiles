@@ -3,7 +3,7 @@ debug=${1:-false}
 
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
-  source ./lib.sh
+	source ./lib.sh
 fi;
 
 # Set install flag to false
@@ -31,9 +31,9 @@ if $brewinstall; then
 		# note: if your /usr/local is locked down (like at Google), you can do this to place everything in ~/.homebrew
 		# mkdir "$HOME/.homebrew" && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
 		# then add this to your path: export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
-	  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	  print_result $? 'Install Homebrew.'
+		print_result $? 'Install Homebrew.'
 	else
 		success "Homebrew already installed."
 	fi;
@@ -67,8 +67,8 @@ if $brewinstall; then
 
 	# Switch to using brew-installed bash as default shell
 	if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-	  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-	  chsh -s /usr/local/bin/bash;
+		echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+		chsh -s /usr/local/bin/bash;
 	fi;
 
 	# zsh
@@ -183,7 +183,7 @@ if $brewinstall; then
 	brew cask install font-droid-sans
 	brew cask install font-droid-sans-mono
 	brew cask install font-fontawesome
-	brew cask install font-inconsolata
+	brew cask install font-inconsolatap
 	brew cask install font-open-sans
 	brew cask install font-pt-sans
 	brew cask install font-source-code-pro

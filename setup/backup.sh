@@ -3,13 +3,13 @@ debug=${1:-false}
 
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
-  source ./lib.sh
+	source ./lib.sh
 fi;
 
 # Load dirs and files if not already loaded.
 if [ -z ${filesloaded+x} ]; then
-  source ./files.sh
-  echo -en "\n"
+	source ./files.sh
+	echo -en "\n"
 fi;
 
 bot "Backup directories and files we'll be touching."
@@ -39,27 +39,27 @@ fi;
 action "Backup directories"
 # Loop array of directories that dotfiles handles, copy them to backup
 for i in "${dotfilesdirarray[@]}"; do
-  cp -Rp ${i/$dotfilesdir/$HOME} "$dotfilesbackupdir"
+	cp -Rp ${i/$dotfilesdir/$HOME} "$dotfilesbackupdir"
 	print_result $? "Copying ${i/$dotfilesdir/$HOME}"
 done;
 
 action "Backup files"
 # Loop array of directories that dotfiles handles files for
 for i in "${dotfilesfilearray[@]}"; do
-  declare -a tmparr=()
+	declare -a tmparr=()
 
-  # Properly store the results of find on these directories in an array
-  # https://stackoverflow.com/questions/23356779/how-can-i-store-find-command-result-as-arrays-in-bash
-  # We want to handle .*, *.cfg, *.conf and NOT .DS_Store, .git, .osx, .macos and no *.sh files
-  while IFS=  read -r -d $'\0'; do
-    tmparr+=("$REPLY")
-  done < <(find "$i" -type f -maxdepth 1 \( -name ".*" -o -name "*.cfg" -o -name "*.conf" \) -a -not -name .DS_Store -not -name .git -not -name .osx -not -name .macos -not -name "*.sh" -print0)
+	# Properly store the results of find on these directories in an array
+	# https://stackoverflow.com/questions/23356779/how-can-i-store-find-command-result-as-arrays-in-bash
+	# We want to handle .*, *.cfg, *.conf and NOT .DS_Store, .git, .osx, .macos and no *.sh files
+	while IFS=  read -r -d $'\0'; do
+		tmparr+=("$REPLY")
+	done < <(find "$i" -type f -maxdepth 1 \( -name ".*" -o -name "*.cfg" -o -name "*.conf" \) -a -not -name .DS_Store -not -name .git -not -name .osx -not -name .macos -not -name "*.sh" -print0)
 
-  # For each match file in each directory, copy that to backup
-  for j in "${tmparr[@]}"; do
-  	cp -Rp ${j/$i/$HOME} "$dotfilesbackupdir"
+	# For each match file in each directory, copy that to backup
+	for j in "${tmparr[@]}"; do
+		cp -Rp ${j/$i/$HOME} "$dotfilesbackupdir"
 		print_result $? "Copying ${j/$i/$HOME}"
-  done;
+	done;
 done;
 
 action "Backup other local directories and files (just incase...)\n"

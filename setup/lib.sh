@@ -13,129 +13,129 @@ COL_YELLOW=$ESC_SEQ"33;01m"
 COL_BLUE=$ESC_SEQ"\e[96m"
 
 function ok() {
-  echo -e "$COL_GREEN[ok]$COL_RESET $1"
+	echo -e "$COL_GREEN[ok]$COL_RESET $1"
 }
 
 function botintro() {
-  echo -e "\n$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
+	echo -e "\n$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
 }
 function bot() {
-  echo -e "$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
+	echo -e "$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
 }
 
 function actioninfo() {
-  echo -e "$COL_YELLOW[action]:$COL_RESET ⇒ $1"
+	echo -e "$COL_YELLOW[action]:$COL_RESET ⇒ $1"
 }
 
 function running() {
-  echo -en "$COL_YELLOW ⇒ $COL_RESET $1: "
+	echo -en "$COL_YELLOW ⇒ $COL_RESET $1: "
 }
 
 function action() {
-  echo -e "\n$COL_YELLOW[action]:$COL_RESET ⇒ $1"
+	echo -e "\n$COL_YELLOW[action]:$COL_RESET ⇒ $1"
 }
 
 function warn() {
-  echo -e "$COL_YELLOW[warning]$COL_RESET $1"
+	echo -e "$COL_YELLOW[warning]$COL_RESET $1"
 }
 
 function success() {
-  echo -e "$COL_GREEN[success]$COL_RESET $1"
+	echo -e "$COL_GREEN[success]$COL_RESET $1"
 }
 
 function error() {
-  echo -e "$COL_RED[error]$COL_RESET $1"
+	echo -e "$COL_RED[error]$COL_RESET $1"
 }
 
 function cancelled() {
-  echo -e "$COL_RED[cancelled]$COL_RESET $1"
+	echo -e "$COL_RED[cancelled]$COL_RESET $1"
 }
 
 function awesome_header() {
-  echo -en "\n$COL_BLUE          ██            ██     ████ ██  ██ $COL_RESET"
-  echo -en "\n$COL_BLUE         ░██           ░██    ░██░ ░░  ░██ $COL_RESET"
-  echo -en "\n$COL_BLUE         ░██  ██████  ██████ ██████ ██ ░██  █████   ██████ $COL_RESET"
-  echo -en "\n$COL_BLUE      ██████ ██░░░░██░░░██░ ░░░██░ ░██ ░██ ██░░░██ ██░░░░ $COL_RESET"
-  echo -en "\n$COL_BLUE     ██░░░██░██   ░██  ░██    ░██  ░██ ░██░███████░░█████ $COL_RESET"
-  echo -en "\n$COL_BLUE    ░██  ░██░██   ░██  ░██    ░██  ░██ ░██░██░░░░  ░░░░░██ $COL_RESET"
-  echo -en "\n$COL_BLUE    ░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ $COL_RESET"
-  echo -en "\n$COL_BLUE     ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░ $COL_RESET"
-  echo -en "\n"
-  echo -en "\n"
+	echo -en "\n$COL_BLUE          ██            ██     ████ ██  ██ $COL_RESET"
+	echo -en "\n$COL_BLUE         ░██           ░██    ░██░ ░░  ░██ $COL_RESET"
+	echo -en "\n$COL_BLUE         ░██  ██████  ██████ ██████ ██ ░██  █████   ██████ $COL_RESET"
+	echo -en "\n$COL_BLUE      ██████ ██░░░░██░░░██░ ░░░██░ ░██ ░██ ██░░░██ ██░░░░ $COL_RESET"
+	echo -en "\n$COL_BLUE     ██░░░██░██   ░██  ░██    ░██  ░██ ░██░███████░░█████ $COL_RESET"
+	echo -en "\n$COL_BLUE    ░██  ░██░██   ░██  ░██    ░██  ░██ ░██░██░░░░  ░░░░░██ $COL_RESET"
+	echo -en "\n$COL_BLUE    ░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ $COL_RESET"
+	echo -en "\n$COL_BLUE     ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░ $COL_RESET"
+	echo -en "\n"
+	echo -en "\n"
 }
 
 ask_for_confirmation() {
-  echo -e "\e[1m$1\e[0m (y/N) "
-  read -n 1
-  echo -e "\n"
+	echo -e "\e[1m$1\e[0m (y/N) "
+	read -n 1
+	echo -e "\n"
 }
 
 answer_is_yes() {
-  [[ "$REPLY" =~ ^(y|Y) ]] && return 0 || return 1
+	[[ "$REPLY" =~ ^(y|Y) ]] && return 0 || return 1
 }
 
 print_result() {
-  [ $1 -eq 0 ] && success "$2" || error "$2"
-  [ "$3" == "true" ] && [ $1 -ne 0 ] && exit
+	[ $1 -eq 0 ] && success "$2" || error "$2"
+	[ "$3" == "true" ] && [ $1 -ne 0 ] && exit
 }
 
 execute() {
-  if $debug; then
-  	$1
-  else
-  	$1 &> /dev/null
-  fi;
-  print_result $? "${2:-$1}"
+	if $debug; then
+		$1
+	else
+		$1 &> /dev/null
+	fi;
+	print_result $? "${2:-$1}"
 }
 
 function require_cask() {
-  running "brew cask $1";
-  brew cask list "$1" > /dev/null 2>&1 | true;
+	running "brew cask $1";
+	brew cask list "$1" > /dev/null 2>&1 | true;
 
-  if [[ ${PIPESTATUS[0]} != 0 ]]; then
-    action "brew cask install $1 $2";
-    brew cask install "$1";
+	if [[ ${PIPESTATUS[0]} != 0 ]]; then
+		action "brew cask install $1 $2";
+		brew cask install "$1";
 
-    if [[ $? != 0 ]]; then
-      error "failed to install $1!"
-    fi;
-  fi;
+		if [[ $? != 0 ]]; then
+			error "failed to install $1!"
+		fi;
+	fi;
 
-  ok;
+	ok;
 }
 
 function require_brew() {
-  running "brew $1 $2";
-  brew list "$1" > /dev/null 2>&1 | true;
+	running "brew $1 $2";
+	brew list "$1" > /dev/null 2>&1 | true;
 
-  if [[ ${PIPESTATUS[0]} != 0 ]]; then
-    action "brew install $1 $2";
-    brew install "$1" "$2";
+	if [[ ${PIPESTATUS[0]} != 0 ]]; then
+		action "brew install $1 $2";
+		brew install "$1" "$2";
 
-    if [[ $? != 0 ]]; then
-      error "failed to install $1!";
-    fi;
-  fi;
+		if [[ $? != 0 ]]; then
+			error "failed to install $1!";
+		fi;
+	fi;
 
-  ok;
+	ok;
 }
 
 # Check if folder is a git repo.
 is_git_repository() {
-  [ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] && return 0 || return 1
+	[ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] && return 0 || return 1
 }
 
 ask_for_sudo() {
-  # Ask for the administrator password upfront
-  sudo -v
+	# Ask for the administrator password upfront
+	sudo -v
 
-  # Update existing `sudo` time stamp until this script has finished
-  # https://gist.github.com/cowboy/3118588
-  while true; do
-    sudo -n true
-    sleep 60
-    kill -0 "$$" || exit
-  done &> /dev/null &
+	# Update existing `sudo` time stamp until this script has finished
+	# https://gist.github.com/cowboy/3118588
+	while true; do
+		sudo -n true
+		sleep 60
+		kill -0 "$$" || exit
+	done &> /dev/null &
 }
 
 # Takes an array of dir locations and then handles mkdir etc.

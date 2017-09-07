@@ -3,23 +3,23 @@ debug=${1:-false}
 
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
-  source ./lib.sh
+	source ./lib.sh
 fi;
 
 # Load dirs and files if not already loaded.
 if [ -z ${filesloaded+x} ]; then
-  source ./files.sh
-  echo -en "\n"
+	source ./files.sh
+	echo -en "\n"
 fi;
 
 # Set dotfilesdir var if not declared.
 if [ -z ${dotfilesdir+x} ]; then
-  dotfilesdir="$(dirname "$(pwd)")"
+	dotfilesdir="$(dirname "$(pwd)")"
 fi;
 
 # Set defaultdotfilesdir var if not declared.
 if [ -z ${defaultdotfilesdir+x} ]; then
-  defaultdotfilesdir="$HOME/dotfiles"
+	defaultdotfilesdir="$HOME/dotfiles"
 fi;
 
 # Used later if we need to symlink to "$HOME/dotfiles"
@@ -41,10 +41,10 @@ for i in "${dotfilesfilearray[@]}"; do
 	declare -a tmparr=()
 
 	# Properly store the results of find on these directories in an array
-  # We want to handle .*, *.cfg, *.conf and NOT .DS_Store, .git, .osx, .macos and no *.sh files
-  while IFS=  read -r -d $'\0'; do
-    tmparr+=("$REPLY")
-  done < <(find "$i" -type f -maxdepth 1 \( -name ".*" -o -name "*.cfg" -o -name "*.conf" \) -a -not -name .DS_Store -not -name .git -not -name .osx -not -name .macos -not -name "*.sh" -print0)
+	# We want to handle .*, *.cfg, *.conf and NOT .DS_Store, .git, .osx, .macos and no *.sh files
+	while IFS=  read -r -d $'\0'; do
+		tmparr+=("$REPLY")
+	done < <(find "$i" -type f -maxdepth 1 \( -name ".*" -o -name "*.cfg" -o -name "*.conf" \) -a -not -name .DS_Store -not -name .git -not -name .osx -not -name .macos -not -name "*.sh" -print0)
 
 	for j in "${tmparr[@]}"; do
 		# Symlink, targetting from $i (parent folder of dotfile group) to $HOME
