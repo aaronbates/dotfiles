@@ -1,0 +1,21 @@
+#!/bin/bash
+# A filter that annotates `git rebase -i` input with authorship information to
+# help you avoid squashing commits together that may have been authored by
+# different people.
+set -e
+
+if [ "$1" = "--stat" ]; then
+  mode="--stat"
+  shift 1
+else
+  mode="-s"
+fi
+
+while read action sha other; do
+  if [ -n "$action" ]; then
+    echo -n "$action "
+    git show $sha --format="%h [%an] %s" "$mode"
+  else
+    echo
+  fi
+done

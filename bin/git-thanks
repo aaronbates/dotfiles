@@ -1,0 +1,8 @@
+#!/bin/bash
+# Usage: git thanks <range>
+#
+# Show authorship info sorted by the number of commits during `<range>`.
+
+git log --format='%an' "$@" | \
+  sort | uniq -c | sort -rn | \
+  sed 's/ *\([0-9]\{1,\}\) \(.*\)/\2 (\1)/'

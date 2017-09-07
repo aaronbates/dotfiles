@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Show MacBook battery level formatted for tmux status bar.
+#
+# Adapted from: https://github.com/Goles/Battery
+
+battery_charge() {
+  ioreg -c AppleSmartBattery -w0 | \
+    grep -o '"[^"]*" = [^ ]*' | \
+    sed -e 's/= //g' -e 's/"//g' | \
+    sort | \
+    while read key value; do
+      case $key in
+        "MaxCapacity")
+          export maxcap=$value;;
+        "CurrentCapacity")
+          export curcap=$value;;
+      esac
+      if [[ -n "$maxcap" && -n $curcap ]]; then
+        CAPACITY=$(( 100 * curcap / maxcap))
+        printf "%d" $CAPACITY
+        break
+      fi
+    done
+}
+
+BATTERY_STATUS=`battery_charge`
+[ -z "$BATTERY_STATUS" ] && exit 1
+
+if [ $BATTERY_STATUS -lt 25 ]; then
+  fg=colour210
+  bg=colour88
+elif [ $BATTERY_STATUS -lt 75 ]; then
+  fg=colour228
+  bg=colour94
+else
+  fg=colour8
+  bg=colour234
+fi
+
+printf "#[fg=${fg},bg=${bg}] %2d%%" $BATTERY_STATUS
