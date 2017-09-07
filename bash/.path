@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Build, dedupe and then export PATH.
+PATH="$HOME/bin"
+PATH="$PATH:/usr/local/bin"
+PATH="$PATH:/usr/bin"
+PATH="$PATH:/bin"
+PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:/usr/sbin"
+PATH="$PATH:/sbin"
+
+# Node -- use project specific binaries before global ones.
+PATH="node_modules/.bin:vendor/bin:$HOME/.node-global-modules/bin:$PATH"
+
+# Go
+PATH="$GOPATH/bin:$PATH"
+PATH="$PATH:/usr/local/opt/go/libexec/bin"
+
+# rbenv
+PATH="$HOME/.rbenv/bin:$PATH"
+
+# awscli
+PATH="/usr/local/aws/bin:$PATH"
+
+# Source local path config
+if [ -e "$HOME/.path.local" ]; then
+	source "$HOME/.path.local"
+fi;
+
+# Dedupe using awk.
+if hash awk 2>/dev/null; then
+  PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+fi;
+
+export PATH
