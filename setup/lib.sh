@@ -13,210 +13,210 @@ COL_YELLOW=$ESC_SEQ"33;01m"
 COL_BLUE=$ESC_SEQ"\e[96m"
 
 function ok() {
-	echo -e "$COL_GREEN[ok]$COL_RESET $1"
+  echo -e "$COL_GREEN[ok]$COL_RESET $1"
 }
 
 function botintro() {
-	echo -e "\n$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
+  echo -e "\n$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
 }
 function bot() {
-	echo -e "$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
+  echo -e "$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
 }
 
 function actioninfo() {
-	echo -e "$COL_YELLOW[action]:$COL_RESET ⇒ $1"
+  echo -e "$COL_YELLOW[action]:$COL_RESET ⇒ $1"
 }
 
 function running() {
-	echo -en "$COL_YELLOW ⇒ $COL_RESET $1: "
+  echo -en "$COL_YELLOW ⇒ $COL_RESET $1: "
 }
 
 function action() {
-	echo -e "\n$COL_YELLOW[action]:$COL_RESET ⇒ $1"
+  echo -e "\n$COL_YELLOW[action]:$COL_RESET ⇒ $1"
 }
 
 function warn() {
-	echo -e "$COL_YELLOW[warning]$COL_RESET $1"
+  echo -e "$COL_YELLOW[warning]$COL_RESET $1"
 }
 
 function success() {
-	echo -e "$COL_GREEN[success]$COL_RESET $1"
+  echo -e "$COL_GREEN[success]$COL_RESET $1"
 }
 
 function error() {
-	echo -e "$COL_RED[error]$COL_RESET $1"
+  echo -e "$COL_RED[error]$COL_RESET $1"
 }
 
 function cancelled() {
-	echo -e "$COL_RED[cancelled]$COL_RESET $1"
+  echo -e "$COL_RED[cancelled]$COL_RESET $1"
 }
 
 function awesome_header() {
-	echo -en "\n$COL_BLUE          ██            ██     ████ ██  ██ $COL_RESET"
-	echo -en "\n$COL_BLUE         ░██           ░██    ░██░ ░░  ░██ $COL_RESET"
-	echo -en "\n$COL_BLUE         ░██  ██████  ██████ ██████ ██ ░██  █████   ██████ $COL_RESET"
-	echo -en "\n$COL_BLUE      ██████ ██░░░░██░░░██░ ░░░██░ ░██ ░██ ██░░░██ ██░░░░ $COL_RESET"
-	echo -en "\n$COL_BLUE     ██░░░██░██   ░██  ░██    ░██  ░██ ░██░███████░░█████ $COL_RESET"
-	echo -en "\n$COL_BLUE    ░██  ░██░██   ░██  ░██    ░██  ░██ ░██░██░░░░  ░░░░░██ $COL_RESET"
-	echo -en "\n$COL_BLUE    ░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ $COL_RESET"
-	echo -en "\n$COL_BLUE     ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░ $COL_RESET"
-	echo -en "\n"
-	echo -en "\n"
+  echo -en "\n$COL_BLUE          ██            ██     ████ ██  ██ $COL_RESET"
+  echo -en "\n$COL_BLUE         ░██           ░██    ░██░ ░░  ░██ $COL_RESET"
+  echo -en "\n$COL_BLUE         ░██  ██████  ██████ ██████ ██ ░██  █████   ██████ $COL_RESET"
+  echo -en "\n$COL_BLUE      ██████ ██░░░░██░░░██░ ░░░██░ ░██ ░██ ██░░░██ ██░░░░ $COL_RESET"
+  echo -en "\n$COL_BLUE     ██░░░██░██   ░██  ░██    ░██  ░██ ░██░███████░░█████ $COL_RESET"
+  echo -en "\n$COL_BLUE    ░██  ░██░██   ░██  ░██    ░██  ░██ ░██░██░░░░  ░░░░░██ $COL_RESET"
+  echo -en "\n$COL_BLUE    ░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ $COL_RESET"
+  echo -en "\n$COL_BLUE     ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░ $COL_RESET"
+  echo -en "\n"
+  echo -en "\n"
 }
 
 ask_for_confirmation() {
-	echo -e "\e[1m$1\e[0m (y/N) "
-	read -n 1
-	echo -e "\n"
+  echo -e "\e[1m$1\e[0m (y/N) "
+  read -n 1
+  echo -e "\n"
 }
 
 answer_is_yes() {
-	[[ "$REPLY" =~ ^(y|Y) ]] && return 0 || return 1
+  [[ "$REPLY" =~ ^(y|Y) ]] && return 0 || return 1
 }
 
 print_result() {
-	[ $1 -eq 0 ] && success "$2" || error "$2"
-	[ "$3" == "true" ] && [ $1 -ne 0 ] && exit
+  [ $1 -eq 0 ] && success "$2" || error "$2"
+  [ "$3" == "true" ] && [ $1 -ne 0 ] && exit
 }
 
 execute() {
-	if $debug; then
-		$1
-	else
-		$1 &> /dev/null
-	fi;
-	print_result $? "${2:-$1}"
+  if $debug; then
+    $1
+  else
+    $1 &> /dev/null
+  fi;
+  print_result $? "${2:-$1}"
 }
 
 function require_cask() {
-	running "brew cask $1";
-	brew cask list "$1" > /dev/null 2>&1 | true;
+  running "brew cask $1";
+  brew cask list "$1" > /dev/null 2>&1 | true;
 
-	if [[ ${PIPESTATUS[0]} != 0 ]]; then
-		action "brew cask install $1 $2";
-		brew cask install "$1";
+  if [[ ${PIPESTATUS[0]} != 0 ]]; then
+    action "brew cask install $1 $2";
+    brew cask install "$1";
 
-		if [[ $? != 0 ]]; then
-			error "failed to install $1!"
-		fi;
-	fi;
+    if [[ $? != 0 ]]; then
+      error "failed to install $1!"
+    fi;
+  fi;
 
-	ok;
+  ok;
 }
 
 function require_brew() {
-	running "brew $1 $2";
-	brew list "$1" > /dev/null 2>&1 | true;
+  running "brew $1 $2";
+  brew list "$1" > /dev/null 2>&1 | true;
 
-	if [[ ${PIPESTATUS[0]} != 0 ]]; then
-		action "brew install $1 $2";
-		brew install "$1" "$2";
+  if [[ ${PIPESTATUS[0]} != 0 ]]; then
+    action "brew install $1 $2";
+    brew install "$1" "$2";
 
-		if [[ $? != 0 ]]; then
-			error "failed to install $1!";
-		fi;
-	fi;
+    if [[ $? != 0 ]]; then
+      error "failed to install $1!";
+    fi;
+  fi;
 
-	ok;
+  ok;
 }
 
 # Check if folder is a git repo.
 is_git_repository() {
-	[ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] && return 0 || return 1
+  [ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] && return 0 || return 1
 }
 
 ask_for_sudo() {
-	# Ask for the administrator password upfront
-	sudo -v
+  # Ask for the administrator password upfront
+  sudo -v
 
-	# Update existing `sudo` time stamp until this script has finished
-	# https://gist.github.com/cowboy/3118588
-	while true; do
-		sudo -n true
-		sleep 60
-		kill -0 "$$" || exit
-	done &> /dev/null &
+  # Update existing `sudo` time stamp until this script has finished
+  # https://gist.github.com/cowboy/3118588
+  while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+  done &> /dev/null &
 }
 
 # Takes an array of dir locations and then handles mkdir etc.
 make_directories () {
-	dirsuccess=true
-	local arr=("$@")
+  dirsuccess=true
+  local arr=("$@")
 
-	for i in "${arr[@]}"; do
-		if [ ! -d "$i" ]; then
-			if $debug; then
-				mkdir "$i"
-			else
-				mkdir -p "$i"
-			fi;
-		else
-			# test if link
-			if [ -L "$i" ]; then
-				error "Exists as symlink: $i"
-				dirsuccess=false
-			elif $debug; then
-				echo -e "Directory exists: $i"
-			fi;
-		fi;
-	done;
+  for i in "${arr[@]}"; do
+    if [ ! -d "$i" ]; then
+      if $debug; then
+        mkdir "$i"
+      else
+        mkdir -p "$i"
+      fi;
+    else
+      # test if link
+      if [ -L "$i" ]; then
+        error "Exists as symlink: $i"
+        dirsuccess=false
+      elif $debug; then
+        echo -e "Directory exists: $i"
+      fi;
+    fi;
+  done;
 }
 
 # Creates symlinks, checks for existence etc.
 process_symlinks () {
-	local linksource="$1"
-	local linktarget="${1/$2/$3}"
-	local createlink=false
+  local linksource="$1"
+  local linktarget="${1/$2/$3}"
+  local createlink=false
 
-	# check if target exists
-	if [ -e "$linktarget" ]; then
-		ask_for_confirmation "\n'$linktarget' already exists, do you want to overwrite it?"
+  # check if target exists
+  if [ -e "$linktarget" ]; then
+    ask_for_confirmation "\n'$linktarget' already exists, do you want to overwrite it?"
 
-		if answer_is_yes; then
-			if [ -L "$linktarget" ]; then
-				# target is a link, unlink it.
-				unlink "$linktarget"
-			else
-				# target is a dir or file, trash or rm it.
-				# if trash is installed, prefer it, we can restore.
-				if hash trash 2>/dev/null; then
-					trash "$linktarget"
-				else
-					# rm = bye bye.
-					rm -rf "$linktarget"
-				fi;
-			fi;
+    if answer_is_yes; then
+      if [ -L "$linktarget" ]; then
+        # target is a link, unlink it.
+        unlink "$linktarget"
+      else
+        # target is a dir or file, trash or rm it.
+        # if trash is installed, prefer it, we can restore.
+        if hash trash 2>/dev/null; then
+          trash "$linktarget"
+        else
+          # rm = bye bye.
+          rm -rf "$linktarget"
+        fi;
+      fi;
 
-			createlink=true
-		else
-			error "Could not symlink $linksource => $linktarget"
-		fi;
-	else
-		createlink=true
-	fi;
+      createlink=true
+    else
+      error "Could not symlink $linksource => $linktarget"
+    fi;
+  else
+    createlink=true
+  fi;
 
-	if $createlink; then
-		#echo -e "$linksource $linktarget"
-		execute "ln -fs $linksource $linktarget" "Symlinked: $linksource => $linktarget"
-	fi;
+  if $createlink; then
+    #echo -e "$linksource $linktarget"
+    execute "ln -fs $linksource $linktarget" "Symlinked: $linksource => $linktarget"
+  fi;
 }
 
 # Unlink symlinks, checks for existence etc.
 unlink_symlinks () {
-	local linksource="$1"
-	local linktarget="${1/$2/$3}"
+  local linksource="$1"
+  local linktarget="${1/$2/$3}"
 
-	# check if target exists
-	if [ -e "$linktarget" ]; then
-		if [ -L "$linktarget" ]; then
-			# target is a link, unlink it.
-			execute "unlink $linktarget" "Unlinked: $linktarget"
-		else
-			error "$linktarget is not a symlink."
-		fi;
-	else
-		error "$linktarget does not exist."
-	fi;
+  # check if target exists
+  if [ -e "$linktarget" ]; then
+    if [ -L "$linktarget" ]; then
+      # target is a link, unlink it.
+      execute "unlink $linktarget" "Unlinked: $linktarget"
+    else
+      error "$linktarget is not a symlink."
+    fi;
+  else
+    error "$linktarget does not exist."
+  fi;
 }
 
 # Mark lib as loaded

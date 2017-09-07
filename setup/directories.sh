@@ -3,20 +3,20 @@ debug=${1:-false}
 
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
-	source ./lib.sh
+  source ./lib.sh
 fi;
 
 bot "Create required directories."
 
 # Declare array of directories.
 declare -a createdirarray=(
-	"$HOME/Applications"
-	"$HOME/Work"
-	"$HOME/projects"
-	"$HOME/code"
-	"$HOME/.tmp"
-	"$HOME/.ssh"
-	"$HOME/.ssh/control"
+  "$HOME/Applications"
+  "$HOME/Work"
+  "$HOME/projects"
+  "$HOME/code"
+  "$HOME/.tmp"
+  "$HOME/.ssh"
+  "$HOME/.ssh/control"
 )
 
 action "Creating directories"
@@ -24,10 +24,10 @@ action "Creating directories"
 make_directories ${createdirarray[@]}
 
 if $dirsuccess; then
-	success "Directories created."
+  success "Directories created."
 else
-	error "Errors when creating directories, please check and resolve."
-	cancelled "\e[1mCannot proceed. Exit.\e[0m"
-	exit -1
+  error "Errors when creating directories, please check and resolve."
+  cancelled "\e[1mCannot proceed. Exit.\e[0m"
+  exit -1
 fi;
 

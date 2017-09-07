@@ -3,7 +3,7 @@ debug=${1:-false}
 
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
-	source ./lib.sh
+  source ./lib.sh
 fi;
 
 # --------------------
@@ -16,19 +16,19 @@ botintro "\e[1mMIGRATION\e[0m"
 
 ask_for_confirmation "\nWould you like to migrate your existing system?";
 if answer_is_yes; then
-	ok "This takes a few steps:"
+  ok "This takes a few steps:"
 
-	botintro "NOTE: This is not exhaustive, it will migrate some important directories and files to ~/migration and \e[1manything in that directory will be overwritten\e[0m -- please read the docs, code and refer to your own system first."
+  botintro "NOTE: This is not exhaustive, it will migrate some important directories and files to ~/migration and \e[1manything in that directory will be overwritten\e[0m -- please read the docs, code and refer to your own system first."
 
-	ask_for_confirmation "\nAre you sure you want to proceed?";
-	if answer_is_yes; then
-		migrationapproved=true;
-	fi;
+  ask_for_confirmation "\nAre you sure you want to proceed?";
+  if answer_is_yes; then
+    migrationapproved=true;
+  fi;
 fi;
 
 if ! $migrationapproved; then
-	cancelled "\e[1mMigration not approved. Exiting.\e[0m"
-	exit -1
+  cancelled "\e[1mMigration not approved. Exiting.\e[0m"
+  exit -1
 fi;
 
 botintro "Running migration tasks."
