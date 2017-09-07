@@ -157,7 +157,7 @@ Package managers make it easy to install, update and remove software The best pa
 7. Install [DevOps tools](docs/package-contents.md#devops-tools)
 8. Install [Webfont tools](docs/package-contents.md#webfont-tools)
 9. Install [Fonts](docs/package-contents.md#fonts)
-10. Install [Applications](docs/package-contents.md#applications)
+10. Install [Applications](docs/package-contents.md#applications-installed-via-homebrew-cask)
 11. Install [Quicklook plugins](docs/package-contents.md#quicklook-plugins)
 
 The script then uses [`mas`](https://github.com/mas-cli/mas) to install some [Mac App Store applications](docs/package-contents.md#mac-app-store-applications) unavailable via Homebrew.
@@ -362,7 +362,7 @@ Then run the [symlink script](#symlink-scripts) to apply the links.
 
 When setting up a new Mac, you may want to set some sensible defaults (as maintained by [Mathias](http://mths.be/macos)).
 
-I have included my tweaked version of these settings in this repository, take a look but :warning: **be very careful using this file** :warning: — I do *not* recommend just running it without reviewing and understanding it carefully first.
+I have included my tweaked version of these settings in this repository, [take a look](macos/.macos) but :warning: **be very careful using this file** :warning: — I do *not* recommend just running it without reviewing and understanding it carefully first.
 
 ```bash
 $ cd ~/dotfiles/macos && ./.macos
@@ -404,7 +404,7 @@ name = Personal Files
 .extra
 ```
 
-When I declare this in my main `.mackup.cfg` they are handled with ease:
+When I declare this in my main [`.mackup.cfg`](mackup/.mackup.cfg) they are handled with ease:
 
 ```ini
 [storage]

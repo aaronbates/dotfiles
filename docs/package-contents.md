@@ -105,7 +105,7 @@ Bash 4 and auto-completion
 - `tmux`
 - `z`
 
-### Other useul utils
+### Other useful utils
 
 - `ack`
 - `brew-cask-completion`
@@ -172,7 +172,7 @@ Bash 4 and auto-completion
 - `awscli` — `$AWS_PROFILE` is 'read-only'
 - `heroku`
 
-### Webont tools
+### Webfont tools
 `tap cask/webfonttools`
 
 - `snt2woff`
@@ -265,7 +265,7 @@ Installed using `mas`:
 - `n` to manage Node versions (latest and LTS installed)
 - `.npmrc` — Node config
 
-### Global packages
+### Global modules
 
 - `create-react-app`
 - `doctoc`

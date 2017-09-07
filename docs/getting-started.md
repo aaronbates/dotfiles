@@ -31,7 +31,7 @@ Some of my favourites:
 
 ### A better prompt
 
-Auto-completion that doesn't suck. Case insensitivity. No more "Display all 1745 possibilities? (y or n)". Type `cat <uparrow>` to see your previous cats — thanks [`.bash_prompt`](../bash/.bash_prompt) and [`.inputrc`](../shell/.inputrc)!
+Auto-completion that doesn't suck. Case insensitivity. No more "Display all 1745 possibilities? (y or n)". Type `cat <uparrow>` to see your previous cats — thanks [`.bash_prompt`](../bash/.bash_prompt) and [`.inputrc`](../bash/.inputrc)!
 
 ### `z` is awesome.
 
