@@ -179,13 +179,16 @@ if $brewinstall; then
   # FONTS
   brew tap caskroom/fonts
 
-  brew cask install font-fira-code
+  brew cask install font-domine
   brew cask install font-droid-sans
   brew cask install font-droid-sans-mono
+  brew cask install font-fira-code
+  brew cask install font-fira-sans
   brew cask install font-fontawesome
-  brew cask install font-inconsolatap
+  brew cask install font-inconsolata
+  brew cask install font-lato
   brew cask install font-open-sans
-  brew cask install font-pt-sans
+  brew cask install font-roboto
   brew cask install font-source-code-pro
   brew cask install font-source-sans-pro
   brew cask install font-ubuntu
