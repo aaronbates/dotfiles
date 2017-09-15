@@ -1,8 +1,10 @@
 [alias]
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
   lg = log --pretty=oneline --graph --abbrev-commit
+  graph = log --graph --all --decorate --stat --date=iso
 
 	# View the current working tree status using the short format
 	s = status -s
@@ -64,6 +66,28 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
+  # Recap
+  recap = log --all --oneline --no-merges --author="aaron@aaronbates.me"
+
+  # Today
+  today = log --since=00:00:00 --all --no-merges --oneline --author="aaron@aaronbates.me"
+
+  # Upstream
+  upstream = "!f() { \
+    declare head=\"${1:-HEAD}\"; \
+    declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
+    declare branch=\"${2:-$currentBranch}\"; \
+    git log --oneline --no-merges $head..origin/$branch; \
+  }; f"
+
+  # Local
+  local = "!f() { \
+    declare head=\"${1:-HEAD}\"; \
+    declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
+    declare branch=\"${2:-$currentBranch}\"; \
+    git log --oneline --no-merges origin/$branch..$head; \
+  }; f"
+
 	# Merge GitHub pull request on top of the current branch or,
 	# if a branch name is specified, on top of the specified branch
 	mpr = "!f() { \
@@ -104,6 +128,8 @@
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
 
+  editor = vim
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
@@ -133,6 +159,8 @@
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
+
+  template = ~/.git-template-commit
 
 [diff]
 
