@@ -18,6 +18,10 @@ Bash 4 and auto-completion
 - `.inputrc` — better readline config
 - `z` for a better smarter `cd`
 
+### ack
+
+- `.ackrc` — ack config
+
 ### Curl
 
 - `.curlrc` — curl config

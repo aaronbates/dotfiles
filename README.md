@@ -56,6 +56,7 @@ $ git clone https://github.com/aaronbates/dotfiles.git
 
 To keep the project organised all files are split into directories and grouped around topic areas:
 
+- **`ack`** — ack config
 - **`bash`** — bash specific config
 - **`bin`** — various binaries, symlinked to `~/bin` and in `$PATH`
 - **`curl`** — curl config
