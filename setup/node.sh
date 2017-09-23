@@ -46,7 +46,6 @@ if hash n 2>/dev/null; then
   npm install -g doctoc
   npm install -g git-open
   npm install -g git-recent
-  npm install -g grunt-cli
   npm install -g gulp-cli
   npm install -g npm-check
   npm install -g trash-cli
