@@ -42,14 +42,26 @@ if hash n 2>/dev/null; then
 
   action "Installing Node global packages."
   # Install global Node packages.
-  npm install -g create-react-app
-  npm install -g doctoc
-  npm install -g git-open
-  npm install -g git-recent
-  npm install -g gulp-cli
-  npm install -g npm-check
-  npm install -g trash-cli
-  npm install -g vtop
+  npm install --global create-react-app
+  npm install --global caniuse-cmd
+  npm install --global doctoc
+  npm install --global git-open
+  npm install --global git-recent
+  npm install --global gulp-cli
+  npm install --global imgur-uploader-cli
+  npm install --global is-up-cli
+  npm install --global moro
+  npm install --global npm-check
+  npm install --global npm-home
+  npm install --global npm-name-cli
+  npm install --global pageres-cli
+  npm install --global remote-share-cli
+  npm install --global speed-test
+  npm install --global surge
+  npm install --global svgo
+  npm install --global trash-cli
+  npm install --global viewport-list-cli
+  npm install --global vtop
 
   # fin.
 else
