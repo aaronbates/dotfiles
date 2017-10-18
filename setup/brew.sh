@@ -104,7 +104,9 @@ if $brewinstall; then
   brew install git-extras
   brew install git-lfs
   brew install grc
+  brew install httpie
   brew install hub
+  brew install icdiff
   brew install imagemagick --with-webp
   brew install jp2a
   brew install jq
@@ -114,6 +116,7 @@ if $brewinstall; then
   brew install ngrep
   brew install nmap
   brew install p7zip
+  brew install pidof
   brew install pigz
   brew install pv
   brew install readline
@@ -128,9 +131,11 @@ if $brewinstall; then
   brew install the_silver_searcher
   brew install trash-cli
   brew install tree
+  brew install ttygif
   brew install unrar
   brew install vbindiff
   brew install wifi-password
+  brew install youtube-dl
   brew install zopfli
 
   # BACKUP
@@ -158,6 +163,7 @@ if $brewinstall; then
   # DEVOPS
   brew install awscli
   brew install heroku
+  brew install nginx
   # brew install docker
   # brew install docker-compose
   # brew install docker-machine
@@ -229,6 +235,7 @@ if $brewinstall; then
   brew cask install google-chrome-canary
   brew cask install imagealpha
   brew cask install imageoptim
+  brew cask install ngrok
   brew cask install sublime-text
 
   # DevOps
