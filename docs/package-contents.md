@@ -120,7 +120,9 @@ Bash 4 and auto-completion
 - `git-extras`
 - `git-lfs`
 - `grc`
+- `httpie`
 - `hub`
+- `icdiff`
 - `imagemagick --with-webp`
 - `jp2a`
 - `jq`
@@ -130,6 +132,7 @@ Bash 4 and auto-completion
 - `ngrep`
 - `nmap`
 - `p7zip`
+- `pidof`
 - `pigz`
 - `pv`
 - `readline`
@@ -144,9 +147,11 @@ Bash 4 and auto-completion
 - `the_silver_searcher`
 - `trash-cli`
 - `tree`
+- `ttygif`
 - `unrar`
 - `vbindiff`
 - `wifi-password`
+- `youtube-dl`
 - `zopfli`
 
 ### Backup tools
@@ -175,6 +180,7 @@ Bash 4 and auto-completion
 
 - `awscli` — `$AWS_PROFILE` is 'read-only'
 - `heroku`
+- `nginx`
 
 ### Webfont tools
 `tap cask/webfonttools`
@@ -237,6 +243,7 @@ Bash 4 and auto-completion
 - `google-chrome-canary`
 - `imagealpha`
 - `imageoptim`
+- `ngrok`
 - `sublime-text`
 
 ### DevOps
@@ -272,13 +279,23 @@ Installed using `mas`:
 ### Global modules
 
 - `create-react-app`
+- `caniuse-cmd`
 - `doctoc`
 - `git-open`
 - `git-recent`
-- `grunt-cli`
 - `gulp-cli`
+- `imgur-uploader-cli`
+- `is-up-cli`
+- `moro`
 - `npm-check`
+- `npm-home`
+- `npm-name-cli`
+- `remote-share-cli`
+- `speed-test`
+- `surge`
+- `svgo`
 - `trash-cli`
+- `viewport-list-cli`
 - `vtop`
 
 ## Ruby
