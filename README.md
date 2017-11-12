@@ -219,6 +219,7 @@ Finally a number of other tasks are performed:
 
 - Install a [better .nanorc config](https://github.com/scopatz/nanorc)
 - Set `chmod 700 ~/.ssh` and `chmod 600 ~/.ssh/*` (see [here](https://mediatemple.net/community/products/dv/204644740/using-ssh-keys-on-your-server))
+- *Note: see [here](docs/getting-started.md#a-word-on-unix-style-permissions) for more info on Unix style permissions*
 - Install Solarized Dark Theme for Terminal
 - Install Solarized Dark High Contrast Theme for iTerm2
 

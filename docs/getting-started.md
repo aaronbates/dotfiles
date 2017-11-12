@@ -122,3 +122,44 @@ Settings from [`.tmux.conf`](../tmux/.tmux.conf), see comments.
 - [`vtop`](https://github.com/MrRio/vtop) — activity monitor for the command line
 - `weather` — weather from [wttr.in](http://wttr.in)
 - [`wifi-password`](https://github.com/rauchg/wifi-password) — grab local wifi password from OS X Keychain
+
+### A word on Unix style permissions
+
+Permissions are specified for three categories of users:
+
+- **User:** the owner of the file
+- **Group:** the members of the group associated with the file
+- **All:** everyone
+
+Per category, the following permissions can be granted:
+
+- **r (read):** the users in the category are allowed to read the file
+- **w (write):** the users in the category are allowed to change the file
+- **x (execute):** the users in the category are allowed to run the file
+
+That means that permissions can be represented by 9 *bits* (3 categories with 3 permissions each):
+
+            | User    | Group   | All   
+----------- | ------- | ------- | -------
+Permissions | r, w, x | r, w, x | r, w, x
+Bit.        | 8, 7, 6 | 5, 4, 3 | 2, 1, 0
+
+The permissions of a single category of users are stored in 3 bits:
+
+Bits | Permissions | Octal digit
+---- | ----------- | -----------
+000  | –––         | 0
+001  | ––x         | 1
+010  | –w–         | 2
+011  | –wx         | 3
+100  | r––         | 4
+101  | r–x         | 5
+110  | rw–         | 6
+111  | rwx         | 7
+
+This means octal numbers are a compact representation of all permissions, you only need 3 digits, one digit per category of users.
+
+Two examples:
+
+1. **755** = 111,101,101: I can change, read and execute; everyone else can only read and execute.
+2. **640** = 110,100,000: I can read and write; group members can read; everyone can’t access at all.
