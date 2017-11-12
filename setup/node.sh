@@ -48,6 +48,7 @@ if hash n 2>/dev/null; then
   npm install --global git-open
   npm install --global git-recent
   npm install --global gulp-cli
+  npm install --global gzip-size-cli
   npm install --global imgur-uploader-cli
   npm install --global is-up-cli
   npm install --global moro
