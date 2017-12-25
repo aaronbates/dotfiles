@@ -27,14 +27,14 @@ BATTERY_STATUS=`battery_charge`
 [ -z "$BATTERY_STATUS" ] && exit 1
 
 if [ $BATTERY_STATUS -lt 25 ]; then
-  fg=colour210
-  bg=colour88
+  fg=colour210 # ff8787
+  bg=colour88 # 870000
 elif [ $BATTERY_STATUS -lt 75 ]; then
-  fg=colour228
-  bg=colour94
+  fg=colour228 # ffff87
+  bg=colour94 # 875f00
 else
-  fg=colour8
-  bg=colour234
+  fg=colour8 # 808080
+  bg=colour234 # 1c1c1c
 fi
 
 printf "#[fg=${fg},bg=${bg}] %2d%%" $BATTERY_STATUS
