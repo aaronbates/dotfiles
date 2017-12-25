@@ -1,4 +1,7 @@
 [alias]
+  # also, don't forget git-extras:
+  # https://github.com/tj/git-extras/blob/master/Commands.md
+
   branch-name = "!git rev-parse --abbrev-ref HEAD"
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -23,6 +26,17 @@
 
 	# Commit all changes
 	ca = !git add -A && git commit -av
+
+  # Semantic commit messages
+  # credit: https://github.com/fteem/git-semantic-commits
+  c-chore = "!f() { if [ -z \"$1\"  ]; then git commit -m 'chore: ' -e; else git commit -m 'chore: $1'; fi }; f"
+  c-docs = "!f() { if [ -z \"$1\"  ]; then git commit -m 'docs: ' -e; else git commit -m 'docs: $1'; fi }; f"
+  c-feat = "!f() { if [ -z \"$1\"  ]; then git commit -m 'feat: ' -e; else git commit -m 'feat: $1'; fi }; f"
+  c-fix = "!f() { if [ -z \"$1\"  ]; then git commit -m 'fix: ' -e; else git commit -m 'fix: $1'; fi }; f"
+  c-localize = "!f() { if [ -z \"$1\"  ]; then git commit -m 'localize: ' -e; else git commit -m 'localize: $1'; fi }; f"
+  c-refactor = "!f() { if [ -z \"$1\"  ]; then git commit -m 'refactor: ' -e; else git commit -m 'refactor: $1'; fi }; f"
+  c-style = "!f() { if [ -z \"$1\"  ]; then git commit -m 'style: ' -e; else git commit -m 'style: $1'; fi }; f"
+  c-test = "!f() { if [ -z \"$1\"  ]; then git commit -m 'test: ' -e; else git commit -m 'test: $1'; fi }; f"
 
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"

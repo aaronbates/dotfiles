@@ -50,16 +50,16 @@ Use `trash` as a better alternative to `rm`. Files actually go to Trash and can 
 
 ## Git
 
-Git is aliased to `g` on the command line and also has a number of useful aliases mapped within it — please consult the [`.gitconfig`](../git/.gitconfig) file, everything is commented. Some examples:
+Git is aliased to `g` on the command line and also has a number of useful aliases mapped within it — please consult the [`.gitconfig`](../git/.gitconfig) file, everything is commented. Some examples (you can run these all as just `g [alias]` too):
 
 ```bash
-$ g l # view abbreviated log of the last 20 commits
-$ g s # view "short" status
-$ g c # clone a repo and all submodules
+$ git l # view abbreviated log of the last 20 commits
+$ git s # view "short" status
+$ git c # clone a repo and all submodules
 
-$ g ca # commit all changes (verbose)
+$ git ca # commit all changes (verbose)
 
-$ g aliases # list all available aliases
+$ git aliases # list all available aliases
 ```
 
 Local config is available using `~/.gitconfig.local`
@@ -92,6 +92,46 @@ Workflow tools for git. See [git-friendly](https://github.com/jamiew/git-friendl
 - `git resolve` — mark all conflicts as resolved
 - `git unreleased` — show commits since last tag
 - [`git open`](https://github.com/paulirish/git-open) — open repo github pages in browser
+
+### Semantic commit messages
+
+Also of use are semantic git commit messages as inspired by [Sparkbox's article](https://seesparkbox.com/foundry/semantic_commit_messages) and [semantic-git-commits](https://github.com/fteem/git-semantic-commits):
+
+1. Use a rigid commit message format.
+2. Prefix commit messages with a type (feat, chore, fix, etc.)
+3. Provide a summary in present tense.
+
+Format: `git [type] "commit-message-here"`
+
+Available types: `chore`, `docs`, `feat`, `fix`, `localize`, `refactor`, `style`, `test`
+
+Examples:
+
+```
+chore: add build script
+docs: explain how feature works
+feat: add new component
+fix: remove broken confirmation message
+localize: translate help to Italian
+refactor: share logic between x and y
+style: convert tabs to spaces
+test: ensure a retains b
+```
+
+Usage:
+
+- `git c-chore "message"` = `git commit -m 'chore: commit-message-here'`
+- `git c-docs "message"` = `git commit -m 'docs: commit-message-here'`
+- `git c-feat "message"` = `git commit -m 'feat: commit-message-here'`
+- `git c-fix "message"` = `git commit -m 'fix: commit-message-here'`
+- `git c-localize "message"` = `git commit -m 'localize: commit-message-here'`
+- `git c-refactor "message"` = `git commit -m 'refactor: commit-message-here'`
+- `git c-style "message"` = `git commit -m 'style: commit-message-here'`
+- `git c-test "message"` = `git commit -m 'test: commit-message-here'`
+
+Also if you run any of these aliases without a message you will be prompted to enter a commit message using your text editor, for example:
+
+`git c-feat` = `git commit -m 'feat: ' -e`
 
 ## Vim
 
