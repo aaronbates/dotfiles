@@ -60,7 +60,7 @@ To keep the project organised all files are split into directories and grouped a
 - **`bash`** — bash specific config
 - **`bin`** — various binaries, symlinked to `~/bin` and in `$PATH`
 - **`curl`** — curl config
-- **`editor`** — editor config
+- **`editor`** — editor config (including linters)
 - **`git`** — git config, attributes and ignore files
 - **`iterm2`** — iterm2 themes
 - **`mackup`** — config to backup app settings and personal files
@@ -452,7 +452,6 @@ And too many others to name.
 
 ## TODO
 
-- [ ] Link up Package Contents
 - [ ] Install without Git
 - [ ] Add BATS test suite
 - [ ] Ruby config

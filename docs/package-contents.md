@@ -29,6 +29,8 @@ Bash 4 and auto-completion
 ### Editor
 
 - `.editorconfig` — consistent settings for code editors
+- `.prettierrc` — prettier syntax config
+- `.stylelintrc` — prettier syntax config
 
 ### Git
 

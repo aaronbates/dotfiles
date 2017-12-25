@@ -25,6 +25,7 @@ From directories declared in `$dotfilesfilearray`
 - `~/.path`
 - `~/.curlrc`
 - `~/.editorconfig`
+- `~/.prettierrc`
 - `~/.gitattributes`
 - `~/.gitconfig`
 - `~/.gitignore`
