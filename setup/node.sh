@@ -49,6 +49,8 @@ if hash n 2>/dev/null; then
   npm install --global git-recent
   npm install --global gulp-cli
   npm install --global gzip-size-cli
+  npm install --global http-server
+  npm install --global imageoptim-cli
   npm install --global imgur-uploader-cli
   npm install --global is-up-cli
   npm install --global moro
@@ -56,8 +58,11 @@ if hash n 2>/dev/null; then
   npm install --global npm-home
   npm install --global npm-name-cli
   npm install --global pageres-cli
+  npm install --global prettier
   npm install --global remote-share-cli
+  npm install --global serve
   npm install --global speed-test
+  npm install --global stylelint
   npm install --global surge
   npm install --global svgo
   npm install --global trash-cli
