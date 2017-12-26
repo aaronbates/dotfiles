@@ -38,6 +38,8 @@
   c-style = "!f() { if [ -z \"$1\"  ]; then git commit -m \"style: \" -e; else git commit -m \"style: $1\"; fi }; f"
   c-test = "!f() { if [ -z \"$1\"  ]; then git commit -m \"test: \" -e; else git commit -m \"test: $1\"; fi }; f"
 
+  c-semantic = "!f() { echo \"chore, docs, feat, fix, localize, refactor, style, test\"; }; f"
+
   # Switch to a branch, creating it if necessary
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
@@ -245,3 +247,10 @@
 
   # Local modifications that shouldn't be stored in a repo.
   path = "./.gitconfig.local"
+
+[filter "lfs"]
+
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
