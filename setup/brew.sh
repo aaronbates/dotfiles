@@ -171,6 +171,12 @@ if $brewinstall; then
   # brew install docker-machine-driver-xhyve
   # brew install boot2docker
 
+  # NET UTILS
+  brew tap ZloeSabo/homebrew-nettools
+
+  brew install httplab
+  brew install wuzz
+
   running "Installing webfont tools"
 
   # WEBFONT TOOLS
