@@ -101,7 +101,7 @@ Also of use are semantic git commit messages as inspired by [Sparkbox's article]
 2. Prefix commit messages with a type (feat, chore, fix, etc.)
 3. Provide a summary in present tense.
 
-Format: `git [type] "commit-message-here"`
+Format: `git c-[type] "commit-message-here"`
 
 Available types: `chore`, `docs`, `feat`, `fix`, `localize`, `refactor`, `style`, `test`
 
@@ -132,6 +132,10 @@ Usage:
 Also if you run any of these aliases without a message you will be prompted to enter a commit message using your text editor, for example:
 
 `git c-feat` = `git commit -m 'feat: ' -e`
+
+For a reminder of the available semantic commit messages run:
+
+`git c-semantic`
 
 ## Vim
 
