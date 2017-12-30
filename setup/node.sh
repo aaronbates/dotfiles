@@ -53,6 +53,7 @@ if hash n 2>/dev/null; then
   npm install --global imageoptim-cli
   npm install --global imgur-uploader-cli
   npm install --global is-up-cli
+  npm install --global lighthouse
   npm install --global moro
   npm install --global npm-check
   npm install --global npm-home
