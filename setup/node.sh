@@ -62,6 +62,7 @@ if hash n 2>/dev/null; then
   npm install --global prettier
   npm install --global remote-share-cli
   npm install --global serve
+  npm install --global source-map-explorer
   npm install --global speed-test
   npm install --global stylelint
   npm install --global surge
