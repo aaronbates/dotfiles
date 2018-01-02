@@ -453,6 +453,7 @@ And too many others to name.
 ## TODO
 
 - [ ] Install without Git
+- [ ] Take user info for custom config setup (name/email/url)
 - [ ] Add BATS test suite
 - [ ] Ruby config
 - [ ] Databases config
@@ -462,4 +463,3 @@ And too many others to name.
 ----
 
 :octocat: There's no place like `$HOME`.
-<!--- — --->
