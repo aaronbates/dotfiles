@@ -164,7 +164,7 @@ if $brewinstall; then
   brew install awscli
   brew install heroku
   brew install nginx
-  # brew install docker
+  brew install docker
   # brew install docker-compose
   # brew install docker-machine
   # brew install xhyve
