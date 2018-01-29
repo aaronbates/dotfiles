@@ -40,36 +40,42 @@ if hash n 2>/dev/null; then
     exit -1
   fi;
 
+  packages=(
+    create-react-app
+    caniuse-cmd
+    doctoc
+    git-open
+    git-recent
+    gulp-cli
+    gzip-size-cli
+    http-server
+    imageoptim-cli
+    imgur-uploader-cli
+    is-up-cli
+    lighthouse
+    moro
+    npm-check
+    npm-home
+    npm-name-cli
+    pageres-cli
+    prettier
+    remote-share-cli
+    serve
+    source-map-explorer
+    speed-test
+    stylelint
+    surge
+    svgo
+    trash-cli
+    viewport-list-cli
+    vtop
+  )
+
   action "Installing Node global packages."
   # Install global Node packages.
-  npm install --global create-react-app
-  npm install --global caniuse-cmd
-  npm install --global doctoc
-  npm install --global git-open
-  npm install --global git-recent
-  npm install --global gulp-cli
-  npm install --global gzip-size-cli
-  npm install --global http-server
-  npm install --global imageoptim-cli
-  npm install --global imgur-uploader-cli
-  npm install --global is-up-cli
-  npm install --global lighthouse
-  npm install --global moro
-  npm install --global npm-check
-  npm install --global npm-home
-  npm install --global npm-name-cli
-  npm install --global pageres-cli
-  npm install --global prettier
-  npm install --global remote-share-cli
-  npm install --global serve
-  npm install --global source-map-explorer
-  npm install --global speed-test
-  npm install --global stylelint
-  npm install --global surge
-  npm install --global svgo
-  npm install --global trash-cli
-  npm install --global viewport-list-cli
-  npm install --global vtop
+  for package in ${packages[@]}; do
+    npm install --global $package
+  done
 
   # fin.
 else
