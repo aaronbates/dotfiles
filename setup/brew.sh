@@ -164,6 +164,7 @@ if $brewinstall; then
   brew install awscli
   brew install heroku
   brew install nginx
+  brew install puma/puma/puma-dev
   brew install docker
   # brew install docker-compose
   # brew install docker-machine
@@ -215,6 +216,7 @@ if $brewinstall; then
   brew cask install dashlane
   brew cask install keybase
   brew cask install gpgtools
+  brew cask install tunnelblick
 
   # General
   brew cask install caffeine
@@ -269,6 +271,7 @@ if $brewinstall; then
   # requires: brew install mas
   mas install 1254981365 # Contrast
   mas install 1225570693 # Ulysses
+  # TODO: install zeplin
 
   running "brew cleanup"
   # Remove outdated versions from the cellar.
