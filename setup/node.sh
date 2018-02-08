@@ -14,10 +14,10 @@ if hash n 2>/dev/null; then
   botintro "Installing latest and LTS versions of Node."
 
   # Install latest distro.
-  n latest;
+  sudo n latest;
 
   # Install LTS distro.
-  n lts;
+  sudo n lts;
 
   action "Updating npm."
   # Update npm for LTS.
