@@ -79,6 +79,9 @@
   # a.k.a. ‘delete merged’
   dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
+  # "Delete Branch For Real"
+  dbfr = "!git branch -D && git push origin :$1"
+
   # List contributors with number of commits
   contributors = shortlog --summary --numbered
 
