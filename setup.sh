@@ -62,7 +62,7 @@ else
   exit -1;
 fi;
 
-exit -1
+#exit -1
 
 # Ask for the administrator password upfront.
 ask_for_sudo
