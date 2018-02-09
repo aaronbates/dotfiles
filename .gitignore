@@ -18,6 +18,12 @@ venv
 node_modules
 .sass-cache
 
+# dotfiles
+bin/branch
+bin/merge
+bin/pull
+bin/push
+
 # Files that contain credentials or personal info
 .extra
 .gitconfig.local
