@@ -207,6 +207,11 @@ alias npml="npm list --depth=0 2>/dev/null"
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
 
+# Rails
+alias be="bundle exec "
+alias maunicorn="WEB_CONCURRENCY=10 bundle exec unicorn -p 3000 -c config/unicorn.rb"
+alias fst="foreman start"
+
 # Vagrant
 alias vg="vagrant global-status"
 alias vgup="vagrant up"
