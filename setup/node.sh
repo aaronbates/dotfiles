@@ -21,7 +21,7 @@ if hash n 2>/dev/null; then
 
   action "Updating npm."
   # Update npm for LTS.
-  npm install npm -g;
+  sudo npm install npm -g;
 
   # Declare array of Node directories.
   declare -a createnodedirarray=(
@@ -64,17 +64,19 @@ if hash n 2>/dev/null; then
     source-map-explorer
     speed-test
     stylelint
+    stylelint-config-standard
     surge
     svgo
     trash-cli
     viewport-list-cli
     vtop
+    @vue/cli
   )
 
   action "Installing Node global packages."
   # Install global Node packages.
   for package in ${packages[@]}; do
-    npm install --global $package
+    sudo npm install --global $package
   done
 
   # fin.

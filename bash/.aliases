@@ -209,8 +209,6 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 
 # Rails
 alias be="bundle exec "
-alias maunicorn="WEB_CONCURRENCY=10 bundle exec unicorn -p 3000 -c config/unicorn.rb"
-alias fst="foreman start"
 
 # Vagrant
 alias vg="vagrant global-status"
