@@ -12,13 +12,12 @@ action "Setting up .nanorc"
 curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 
 action "Setting chmod for ~/.ssh"
-sudo chmod 700 "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
 print_result $? "Set chmod 700 on ~/.ssh"
-sudo chmod 600 "$HOME/.ssh/*"
-print_result $? "Set chmod 600 on ~/.ssh/*"
 
 action "Setting chmod for ~/.gnupg"
-sudo chmod 700 "$HOME/.gnupg"
+mkdir "$HOME/.gnupg"
+chmod 700 "$HOME/.gnupg"
 
 # Install the Solarized Dark theme for Terminal
 action "Installing Solarized Dark for Terminal"
