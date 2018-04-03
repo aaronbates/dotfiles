@@ -13,37 +13,38 @@ fi;
 if hash n 2>/dev/null; then
   botintro "Installing latest and LTS versions of Node."
 
+  # Create dirs and set current user as owner (prevent sudo issues)
+  action "Creating Node directories"
+
+  sudo mkdir "/usr/local/n"
+  sudo chown -R $(whoami) "/usr/local/n"
+
+  sudo mkdir "/usr/local/lib/node_modules"
+  sudo chown -R $(whoami) "/usr/local/lib/node_modules"
+
   # Install latest distro.
-  sudo n latest;
+  action "Installing latest Node distro"
+
+  n latest;
 
   # Install LTS distro.
-  sudo n lts;
+  action "Installing Node LTS distro"
 
-  action "Updating npm."
+  n lts;
+
   # Update npm for LTS.
-  sudo npm install npm -g;
+  action "Updating npm."
 
-  # Declare array of Node directories.
-  declare -a createnodedirarray=(
-    "$HOME/.node-global-modules"
-  )
+  npm install npm -g;
 
-  action "Creating Node directories"
-  # make Node dirs
-  make_directories ${createnodedirarray[@]}
-
-  if $dirsuccess; then
-    success "Node directories created."
-  else
-    error "Errors when creating Node directories, please check and resolve."
-    cancelled "\e[1mCannot proceed. Exit.\e[0m"
-    exit -1
-  fi;
+  # Install global Node packages.
+  action "Installing Node global packages."
 
   packages=(
     create-react-app
     caniuse-cmd
     doctoc
+    eslint
     git-open
     git-recent
     gulp-cli
@@ -73,10 +74,8 @@ if hash n 2>/dev/null; then
     @vue/cli
   )
 
-  action "Installing Node global packages."
-  # Install global Node packages.
   for package in ${packages[@]}; do
-    sudo npm install --global $package
+    npm install --global $package
   done
 
   # fin.
