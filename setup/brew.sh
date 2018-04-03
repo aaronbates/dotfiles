@@ -270,7 +270,9 @@ if $brewinstall; then
   # Install Mac App Store Applications.
   # requires: brew install mas
   mas install 1254981365 # Contrast
+  mas install 1234952668 # FlagTimes
   mas install 1225570693 # Ulysses
+  # TODO: install pixelsnap
   # TODO: install zeplin
 
   running "brew cleanup"
