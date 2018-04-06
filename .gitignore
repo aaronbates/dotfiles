@@ -17,6 +17,7 @@ Thumbs.db
 venv
 node_modules
 .sass-cache
+npm-debug.log
 
 # dotfiles
 bin/branch
