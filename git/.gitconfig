@@ -42,6 +42,7 @@
   c-feat = "!f() { if [ -z \"$1\"  ]; then git commit -m \"feat: \" -e; elif [ -z \"$2\" ]; then git commit -m \"feat: $1\"; else git commit -m \"feat($1): $2\"; fi }; f"
   c-fix = "!f() { if [ -z \"$1\"  ]; then git commit -m \"fix: \" -e; elif [ -z \"$2\" ]; then git commit -m \"fix: $1\"; else git commit -m \"fix($1): $2\"; fi }; f"
   c-localize = "!f() { if [ -z \"$1\"  ]; then git commit -m \"localize: \" -e; elif [ -z \"$2\" ]; then git commit -m \"localize: $1\"; else git commit -m \"localize($1): $2\"; fi }; f"
+  c-perf = "!f() { if [ -z \"$1\"  ]; then git commit -m \"perf: \" -e; elif [ -z \"$2\" ]; then git commit -m \"perf: $1\"; else git commit -m \"perf($1): $2\"; fi }; f"
   c-refactor = "!f() { if [ -z \"$1\"  ]; then git commit -m \"refactor: \" -e; elif [ -z \"$2\" ]; then git commit -m \"refactor: $1\"; else git commit -m \"refactor($1): $2\"; fi }; f"
   c-revert = "!f() { if [ -z \"$1\"  ]; then git commit -m \"revert: \" -e; elif [ -z \"$2\" ]; then git commit -m \"revert: $1\"; else git commit -m \"revert($1): $2\"; fi }; f"
   c-style = "!f() { if [ -z \"$1\"  ]; then git commit -m \"style: \" -e; elif [ -z \"$2\" ]; then git commit -m \"style: $1\"; else git commit -m \"style($1): $2\"; fi }; f"
