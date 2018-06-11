@@ -204,6 +204,14 @@ function st() {
   fi;
 }
 
+function vs() {
+  if [ $# -eq 0 ]; then
+    open -a "Visual Studio Code" .;
+  else
+    open -a "Visual Studio Code" $@;
+  fi;
+}
+
 # `v` with no arguments opens the current directory in Vim,
 # otherwise opens the given location.
 function v() {

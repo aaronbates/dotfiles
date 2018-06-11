@@ -204,6 +204,8 @@ done
 alias npmg="npm list -g --depth=0 2>/dev/null"
 alias npml="npm list --depth=0 2>/dev/null"
 
+alias npmrns="npm rebuild node-sass --force"
+
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
 
