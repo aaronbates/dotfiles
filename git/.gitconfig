@@ -21,6 +21,9 @@
   # fetch with prune
   fp = fetch --prune
 
+  # Submodule sync
+  subsync = !"git submodule sync; git submodule update --init"
+
   # Pull in remote changes for the current repository and all its submodules
   plsm = !"git pull; git submodule foreach git pull origin master"
 
