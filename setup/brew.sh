@@ -160,6 +160,7 @@ if $brewinstall; then
   #brew install mysql
   brew install redis
 
+
   # DEVOPS
   brew install awscli
   brew install heroku
@@ -241,6 +242,7 @@ if $brewinstall; then
 
   # Development
   brew cask install google-chrome-canary
+  brew cask install graphiql
   brew cask install imagealpha
   brew cask install imageoptim
   brew cask install ngrok
