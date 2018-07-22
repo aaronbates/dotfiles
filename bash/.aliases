@@ -211,6 +211,8 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 
 # Rails
 alias be="bundle exec "
+alias bi="bundle install"
+alias rlogs="less log/development.log"
 
 # Vagrant
 alias vg="vagrant global-status"
