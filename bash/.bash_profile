@@ -3,10 +3,14 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in "$HOME/."{exports,path,bash_prompt,aliases,functions,extra}; do
+for file in "$HOME/."{exports,path,aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# Prompt
+source "$HOME/.bash_prompt"
+#source "$HOME/repos/oh-my-git/prompt.sh"
 
 # Generic colouriser.
 GRC=`which grc`;

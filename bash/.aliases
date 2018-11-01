@@ -201,6 +201,7 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 # npm
+alias ni="npm install"
 alias npmg="npm list -g --depth=0 2>/dev/null"
 alias npml="npm list --depth=0 2>/dev/null"
 
@@ -212,7 +213,10 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 # Rails
 alias be="bundle exec "
 alias bi="bundle install"
+alias rc="bundle exec rails c"
 alias rlogs="less log/development.log"
+alias rdbm="be rake db:migrate"
+alias rdbmt="RAILS_ENV=test be rake db:migrate"
 
 # Vagrant
 alias vg="vagrant global-status"
