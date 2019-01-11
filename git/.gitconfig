@@ -6,6 +6,7 @@
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  ll = log --pretty=oneline -n 50 --graph --abbrev-commit
   lg = log --pretty=oneline --graph --abbrev-commit
   graph = log --graph --all --decorate --stat --date=iso
 
@@ -17,6 +18,9 @@
 
   # `git di $number` shows the diff between the state `$number` revisions ago and the current state
   di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+  # `git sf $sha` shows only the files in commit
+  sf = "!f() { git diff-tree --no-commit-id --name-only -r $1; }; f"
 
   # fetch with prune
   fp = fetch --prune

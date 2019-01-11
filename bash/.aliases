@@ -215,7 +215,8 @@ alias be="bundle exec "
 alias bi="bundle install"
 alias rc="bundle exec rails c"
 alias rlogs="less log/development.log"
-alias rdbm="be rake db:migrate"
+alias rdbm="be rake db:migrate && rdbmt"
+alias rdbmd="be rake data:migrate"
 alias rdbmt="RAILS_ENV=test be rake db:migrate"
 
 # Vagrant
