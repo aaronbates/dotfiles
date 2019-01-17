@@ -96,11 +96,14 @@ if $brewinstall; then
 
   # OTHER USEFUL UTILS
   brew install ack
+  brew install advancecomp
   brew install brew-cask-completion
   brew install cloc
+  brew install cmake
   brew install diff-so-fancy
   brew install fzf
   brew install gibo && gibo -l
+  brew install gifsicle
   brew install git-extras
   brew install git-lfs
   brew install grc
@@ -108,16 +111,21 @@ if $brewinstall; then
   brew install hub
   brew install icdiff
   brew install imagemagick --with-webp
+  brew install jhead
   brew install jp2a
+  brew install jpegoptim
   brew install jq
   brew install libgit2
   brew install mas
   brew install mtr
   brew install ngrep
   brew install nmap
+  brew install optipng
   brew install p7zip
   brew install pidof
   brew install pigz
+  brew install pngcrush
+  brew install pngquant
   brew install pv
   brew install readline
   brew install reattach-to-user-namespace
@@ -142,8 +150,8 @@ if $brewinstall; then
   brew install mackup
 
   # DEVELOPMENT
-  brew install yarn
   brew install n
+  brew install yarn
   brew install go
   brew install homebrew/php/php56 --with-gmp
   brew install pyenv
@@ -157,9 +165,8 @@ if $brewinstall; then
   #brew install elasticsearch
   #brew install mariadb
   brew install mongodb
-  #brew install mysql
+  brew install mysql@5.7
   brew install redis
-
 
   # DEVOPS
   brew install awscli
@@ -179,18 +186,23 @@ if $brewinstall; then
   brew install httplab
   brew install wuzz
 
-  running "Installing webfont tools"
+  # pngout
+  brew tap jonof/kenutils
+
+  brew install/pngout
 
   # WEBFONT TOOLS
+  running "Installing webfont tools"
+
   brew tap bramstein/webfonttools
 
   brew install sfnt2woff
   brew install sfnt2woff-zopfli
   brew install woff2
 
+  # FONTS
   running "Installing fonts"
 
-  # FONTS
   brew tap caskroom/fonts
 
   brew cask install font-domine
@@ -221,35 +233,46 @@ if $brewinstall; then
 
   # General
   brew cask install caffeine
+  brew cask install discord
   brew cask install diskwave
   brew cask install dropbox
+  brew cask install firefox
   brew cask install google-chrome
   brew cask install grammarly
   brew cask install iterm2
   brew cask install licecap
   brew cask install macdown
   brew cask install oversight
+  brew cask install rocket
   brew cask install slack
+  brew cask install slite
   brew cask install spectacle
   brew cask install spotify
   brew cask install vlc
+  brew cask install zoomus
 
   # Design
+  brew cask install abstract
   brew cask install fontbase
   brew cask install framer
   brew cask install iconjar
   brew cask install sketch
+  brew cask install zeplin
 
   # Development
+  brew cask install dash
   brew cask install google-chrome-canary
   brew cask install graphiql
   brew cask install imagealpha
   brew cask install imageoptim
   brew cask install ngrok
-  brew cask install sublime-text
+  brew cask install sequel-pro
+  # brew cask install sublime-text
+  brew cask install visual-studio-code
 
   # DevOps
   brew cask install aws-vault
+  brew cask install sequel-pro
 
   # VM
   # brew cask install virtualbox
@@ -262,8 +285,8 @@ if $brewinstall; then
   brew cask install quicklook-json
   brew cask install qlprettypatch
   brew cask install quicklook-csv
-  brew cask install betterzipql
-  brew cask install qlimagesize
+  # brew cask install betterzipql
+  # brew cask install qlimagesize
   brew cask install webpquicklook
   brew cask install suspicious-package
   brew cask install quicklookase
@@ -275,7 +298,6 @@ if $brewinstall; then
   mas install 1234952668 # FlagTimes
   mas install 1225570693 # Ulysses
   # TODO: install pixelsnap
-  # TODO: install zeplin
 
   running "brew cleanup"
   # Remove outdated versions from the cellar.
