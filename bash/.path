@@ -19,6 +19,9 @@ PATH="$PATH:/usr/local/opt/go/libexec/bin"
 # rbenv
 PATH="$HOME/.rbenv/bin:$PATH"
 
+# mysql@5.7
+PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
 # awscli
 PATH="/usr/local/aws/bin:$PATH"
 
