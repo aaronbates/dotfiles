@@ -1,3 +1,10 @@
 {
-  "extends": "/usr/local/lib/node_modules/stylelint-config-standard"
+  "extends": "/usr/local/lib/node_modules/stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": [
+      true, {
+        "ignoreAtRules": ["function", "if", "each", "include", "mixin"]
+      }
+    ]
+  }
 }
