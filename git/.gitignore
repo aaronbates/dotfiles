@@ -16,6 +16,7 @@ Thumbs.db
 # Application specific files
 venv
 node_modules
+.vscode
 .sass-cache
 
 # Files that contain credentials or personal info

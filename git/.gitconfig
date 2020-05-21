@@ -2,6 +2,8 @@
   # also, don't forget git-extras:
   # https://github.com/tj/git-extras/blob/master/Commands.md
 
+  ap = "!git add -p"
+
   branch-name = "!git rev-parse --abbrev-ref HEAD"
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -54,8 +56,9 @@
   c-revert = "!f() { if [ -z \"$1\"  ]; then git commit -m \"revert: \" -e; elif [ -z \"$2\" ]; then git commit -m \"revert: $1\"; else git commit -m \"revert($1): $2\"; fi }; f"
   c-style = "!f() { if [ -z \"$1\"  ]; then git commit -m \"style: \" -e; elif [ -z \"$2\" ]; then git commit -m \"style: $1\"; else git commit -m \"style($1): $2\"; fi }; f"
   c-test = "!f() { if [ -z \"$1\"  ]; then git commit -m \"test: \" -e; elif [ -z \"$2\" ]; then git commit -m \"test: $1\"; else git commit -m \"test($1): $2\"; fi }; f"
+  c-ux = "!f() { if [ -z \"$1\"  ]; then git commit -m \"ux: \" -e; elif [ -z \"$2\" ]; then git commit -m \"ux: $1\"; else git commit -m \"ux($1): $2\"; fi }; f"
 
-  c-semantic = "!f() { echo \"build, chore, ci, docs, feat, fix, localize, refactor, revert, style, test\"; }; f"
+  c-semantic = "!f() { echo \"build, chore, ci, docs, feat, fix, localize, perf, refactor, revert, style, test, ux\"; }; f"
 
   # Switch to a branch, creating it if necessary
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
@@ -174,6 +177,13 @@
   precomposeunicode = false
 
   editor = vim
+
+  # use https://github.com/dandavison/delta as pager
+  # suggested themes for Nord: 1337, Dracula, Nord, Monokai Extended Bright
+  pager = delta --dark --keep-plus-minus-markers --theme 1337
+
+[interactive]
+    diffFilter = delta --color-only
 
 [color]
   # Use colors in Git commands that are capable of colored output when
