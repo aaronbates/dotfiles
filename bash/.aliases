@@ -19,7 +19,6 @@ alias lib="cd $HOME/Library"
 alias work="cd $HOME/Work"
 alias repos="cd $HOME/repos"
 alias proj="cd $HOME/projects"
-alias code="cd $HOME/code"
 alias dwork="cd $HOME/Dropbox/Work"
 alias drepos="cd $HOME/Dropbox/repos"
 alias dcode="cd $HOME/Dropbox/code"
@@ -204,8 +203,14 @@ done
 alias ni="npm install"
 alias npmg="npm list -g --depth=0 2>/dev/null"
 alias npml="npm list --depth=0 2>/dev/null"
+alias npmog="npm outdated -g --depth=0"
+alias npmug="npm update -g"
+alias npmol="npm outdated --depth=0"
 
 alias npmrns="npm rebuild node-sass --force"
+
+# Sequel Pro
+alias sequel="LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN=y /Applications/Sequel\ Pro.app/Contents/MacOS/Sequel\ Pro"
 
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
