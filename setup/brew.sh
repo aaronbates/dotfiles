@@ -104,6 +104,7 @@ if $brewinstall; then
   brew install fzf
   brew install gibo && gibo -l
   brew install gifsicle
+  brew install git-delta
   brew install git-extras
   brew install git-lfs
   brew install grc
