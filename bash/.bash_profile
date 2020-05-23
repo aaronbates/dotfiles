@@ -44,37 +44,16 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null;
 done;
 
-# Add tab completion for many Bash commands.
-if hash brew 2>/dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-  source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion;
-fi;
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
-# homebrew completion
-if hash brew 2>/dev/null && [ -f /usr/local/etc/bash_completion.d/brew ]; then
-  source "$(brew --prefix)/etc/bash_completion.d/brew"
-fi;
-
-# homebrew cask completion
-if hash brew 2>/dev/null && [ -f /usr/local/etc/bash_completion.d/brew-cask ]; then
-  source "$(brew --prefix)/etc/bash_completion.d/brew-cask"
-fi;
+# import homebrew bash-completions
+source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash";
+source "$(brew --prefix)/etc/bash_completion.d/brew"
+source "$(brew --prefix)/etc/bash_completion.d/gibo-completion.bash";
+source "$(brew --prefix)/etc/bash_completion.d/git-completion.bash"
 
 # Enable tab completion for `g` by marking it as an alias for `git`.
-if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  complete -o default -o nospace -F _git g;
-fi;
-
-# hub completion
-if hash hub 2>/dev/null && [ -f /usr/local/etc/bash_completion.d/hub.bash_completion.sh ]; then
-  source "$(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh";
-fi;
-
-# gibo completion
-if hash gibo 2>/dev/null && [ -f /usr/local/etc/bash_completion.d/gibo-completion.bash ]; then
-  source "$(brew --prefix)/etc/bash_completion.d/gibo-completion.bash";
-fi;
+complete -o default -o nospace -F _git g;
 
 # awscli completion
 if hash awscli 2>/dev/null && [ -f /usr/local/bin/aws_completer ]; then
@@ -98,6 +77,9 @@ zpath="$(brew --prefix)/etc/profile.d/z.sh"
 # Enable history expansion with space.
 # e.g. typing !!<space> will replace the !! with your last command
 bind Space:magic-space
+
+# asdf
+# source "$(brew --prefix asdf)/asdf.sh";
 
 # pyevnv
 if hash pyenv 2>/dev/null; then
