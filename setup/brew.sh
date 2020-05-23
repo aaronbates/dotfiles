@@ -151,6 +151,7 @@ if $brewinstall; then
   brew install mackup
 
   # DEVELOPMENT
+  brew install asdf
   brew install n
   brew install yarn
   brew install go
