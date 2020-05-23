@@ -67,11 +67,12 @@ export GPG_TTY=$(tty);
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
 # MySQL@5.7
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl@1.1/lib/
 export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
 export LD_LIBRARY_PATH="/usr/local/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
 export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # AWS default profile.
 export AWS_PROFILE='read-only'
