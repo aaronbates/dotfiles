@@ -1,3 +1,16 @@
-type: [refs #00000] Subject line (50 chars)
-
-Body (72 chars)
+# 50-character subject line
+#
+# 72-character wrapped longer description body.
+#
+# This should answer:
+#
+# - Why was this change necessary?
+# - How does it address the problem?
+# - Are there any side effects?
+#
+# Include a link to the ticket, if any.
+#
+# Add co-authors if you worked on this code with others:
+#
+# Co-authored-by: Full Name <email@example.com>
+# Co-authored-by: Full Name <email@example.com>

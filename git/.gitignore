@@ -19,6 +19,11 @@ node_modules
 .vscode
 .sass-cache
 
+# Tool version management
+.node-version
+.nvmrc
+.tool-versions
+
 # Files that contain credentials or personal info
 .extra
 .gitconfig.local
