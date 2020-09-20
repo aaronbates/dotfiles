@@ -104,6 +104,9 @@ if ! $brewinstall;  then
   exit -1
 fi;
 
+# asdf setup
+source ./setup/asdf.sh
+
 # Node setup
 source ./setup/node.sh
 

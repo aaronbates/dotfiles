@@ -40,7 +40,7 @@
   c = clone --recursive
 
   # Commit all changes
-  ca = !git add -A && git commit -av
+  # ca = !git add -A && git commit -av
 
   # Semantic commit messages
   # credit: https://github.com/fteem/git-semantic-commits

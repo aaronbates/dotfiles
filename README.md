@@ -1,7 +1,5 @@
 # `$HOME sweet ~/`
 
-<!---[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](http://forthebadge.com)--->
-
 Your dotfiles are how you personalize your system.
 
 These are mine. Built for Mac OS X. Certified lit :fire: :fire: :fire:
@@ -21,14 +19,14 @@ Setup and config for bash, curl, git, node, ruby, tmux, vim, brew, apps, dev env
 - **Xcode Command Line Tools** with automated install.
 - **Awesome bash setup**: [aliases](bash/.aliases), [functions](bash/.functions), [z](https://github.com/rupa/z), smart prompt, tab completion and more.
 - **Git done right**: [aliases](git/.gitconfig), [hub](https://hub.github.com), [git-friendly](https://github.com/jamiew/git-friendly) and custom scripts.
-- **tmux to the max** using [config](tmux/.tmux.conf) and shortcuts.
 - **Vim for the win** via [vim-pathogen](https://github.com/tpope/vim-pathogen), [vim-sensible](https://github.com/tpope/vim-sensible) and other plugins.
+- **tmux to the max** using [config](tmux/.tmux.conf) and shortcuts.
 - **Homebrew package manager** to install tools, applications and fonts.
 - **Must-have tools**: GNU core utils, gnupg, [quick look plugins](https://github.com/sindresorhus/quick-look-plugins), [wifi-password](https://github.com/rauchg/wifi-password), etc.
 - **Must-have apps**: Caffeine, Dropbox, Chrome, [Spectacle](https://www.spectacleapp.com), Spotify, etc.
-- **Developer tools**: Python, Go, Yarn, Postgres, AWS CLI, Docker, Heroku, VMs, etc.
-- **Developer apps**: iTerm2, Framer, Sketch, Slack, Sublime, etc.
-- **Node development** using [n](https://github.com/tj/n) with global package installer.
+- **Developer tools**:  AWS CLI, Docker, MySQL, Postgres, Python, Yarn, etc.
+- **Developer apps**: iTerm2, Slack, VS Code, etc.
+- **Node development** using [asdf](https://github.com/asdf-vm/asdf) with global package installer.
 - **Ruby development** using [rbenv](https://github.com/rbenv/rbenv) and [ruby-build](https://github.com/rbenv/ruby-build).
 - **Goodies in [bin](bin)** including git and tmux tools.
 
@@ -108,7 +106,7 @@ The setup process will start and guide you through:
 
 ![Setup screen](docs/setup.png)
 
- You'll also be asked to enter your password once at the start — **if using on a fresh install, you'll have to restart after the first run applies system updates.**
+You'll also be asked to enter your password once at the start — **if using on a fresh install, you'll have to restart after the first run applies system updates.**
 
 ### Step-by-step
 
@@ -167,8 +165,8 @@ The script then uses [`mas`](https://github.com/mas-cli/mas) to install some [Ma
 
 Post application install the script [`setup/node.sh`](setup/node.sh) is run which:
 
-1. Installs the latest Node release using [`n`](https://github.com/tj/n)
-2. Installs the current LTS Node release using [`n`](https://github.com/tj/n)
+1. Installs the latest Node release using [`asdf`](https://github.com/asdf-vm/asdf)
+2. Installs the current LTS Node release using [`asdf`](https://github.com/asdf-vm/asdf)
 3. Updates `npm`
 4. Creates `~/.node-global-modules`
 5. Installs [global modules](docs/package-contents.md#global-modules) to this folder
@@ -238,8 +236,6 @@ This project can be easily customised to suit personal settings and local requir
 - Store credentials that should remain private.
 
 As mentioned, it's **very** important to avoid storing private data or credentials in a dotfiles repository, using "local config" files that are never committed to public version control is a good way to achieve this.
-
-*Note: if you plan to customise, install [Dotfiles Syntax Highlighting](https://github.com/mattbanks/dotfiles-syntax-highlighting-st2) for [Sublime](https://www.sublimetext.com) via [Package Control](http://wbond.net/sublime_packages/package_control).*
 
 ### Adding custom bash commands
 

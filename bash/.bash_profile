@@ -79,7 +79,7 @@ zpath="$(brew --prefix)/etc/profile.d/z.sh"
 bind Space:magic-space
 
 # asdf
-# source "$(brew --prefix asdf)/asdf.sh";
+source "$(brew --prefix asdf)/asdf.sh";
 
 # pyevnv
 if hash pyenv 2>/dev/null; then

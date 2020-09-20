@@ -40,7 +40,6 @@ Then remind the user to copy other data such as Applications, Games, Movies, Mus
 
 - Copy wi-fi settings
 - Copy automator settings
-- Copy entire Sublime Text 3 directory
 - Copy installed fonts
 
 Then finally suggest a list of other data and settings the user should consider migrating (git branches, tabs, logs, licenses, etc.)

@@ -31,12 +31,11 @@ From directories declared in `$dotfilesfilearray`
 - `~/.gitignore`
 - `~/.mackup.cfg`
 - `~/.npmrc`
-- `~/.exports`
 - `~/.gemrc`
-- `~/.exports`
-- `~/.screenerc`
+- `~/.screenrc`
 - `~/.dircolors`
 - `~/.hushlogin`
+- `~/.tool-versions`
 - `~/.tmux.conf`
 - `~/.vimrc`
 - `~/.wgetrc`

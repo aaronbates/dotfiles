@@ -89,8 +89,6 @@ action "Copying settings."
 cp -Rp /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist "$migrationdir/rootLibrary/Preferences/SystemConfiguration/"
 # Automator
 cp -Rp "$HOME/Library/Services" "$migrationdir/Library/"
-# Editor settings & plugins
-cp -Rp "$HOME/Library/Application Support/Sublime Text 3/" "$migrationdir/Library/Application Support"
 
 success "Settings copied."
 

@@ -246,7 +246,7 @@ Bash 4 and auto-completion
 - `imagealpha`
 - `imageoptim`
 - `ngrok`
-- `sublime-text`
+- `vscode`
 
 ### DevOps
 

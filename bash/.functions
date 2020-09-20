@@ -200,16 +200,8 @@ function getcertnames() {
   fi;
 }
 
-# `st` with no arguments opens the current directory in Sublime Text,
+# `st` with no arguments opens the current directory in VSCode,
 # otherwise opens the given location.
-function st() {
-  if [ $# -eq 0 ]; then
-    open -a "Sublime Text" .;
-  else
-    open -a "Sublime Text" $@;
-  fi;
-}
-
 function vs() {
   if [ $# -eq 0 ]; then
     open -a "Visual Studio Code" .;

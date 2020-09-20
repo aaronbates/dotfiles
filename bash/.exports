@@ -4,7 +4,7 @@ export CODE_DIR="$HOME/code";
 
 # Dotfiles
 export DOTFILES_DIR="$HOME/dotfiles";
-export DOTFILES_IDE="sublime"
+export DOTFILES_IDE="vs"
 
 # Make vim the default editor.
 export EDITOR='vim';

@@ -103,30 +103,24 @@ if $brewinstall; then
   brew install diff-so-fancy
   brew install fzf
   brew install gibo && gibo -l
-  brew install gifsicle
   brew install git-delta
   brew install git-extras
   brew install git-lfs
+  brew install git-quick-stats
+  brew install graphviz
   brew install grc
   brew install httpie
   brew install hub
   brew install icdiff
-  brew install imagemagick --with-webp
-  brew install jhead
-  brew install jp2a
-  brew install jpegoptim
   brew install jq
-  brew install libgit2
+  brew install m
   brew install mas
   brew install mtr
   brew install ngrep
   brew install nmap
-  brew install optipng
   brew install p7zip
   brew install pidof
   brew install pigz
-  brew install pngcrush
-  brew install pngquant
   brew install pv
   brew install readline
   brew install reattach-to-user-namespace
@@ -140,22 +134,21 @@ if $brewinstall; then
   brew install the_silver_searcher
   brew install trash-cli
   brew install tree
-  brew install ttygif
   brew install unrar
   brew install vbindiff
   brew install wifi-password
-  brew install youtube-dl
   brew install zopfli
 
   # BACKUP
   brew install mackup
 
   # DEVELOPMENT
+  brew install adr-tools
   brew install asdf
-  brew install n
+  # brew install n
   brew install yarn
-  brew install go
-  brew install homebrew/php/php56 --with-gmp
+  # brew install go
+  # brew install homebrew/php/php56 --with-gmp
   brew install pyenv
   brew install pyenv-virtualenv
   brew install rbenv
@@ -164,34 +157,22 @@ if $brewinstall; then
 
   # DATABASES
   brew install postgresql
-  #brew install elasticsearch
-  #brew install mariadb
   brew install mongodb
   brew install mysql@5.7
   brew install redis
 
   # DEVOPS
   brew install awscli
-  brew install heroku
   brew install nginx
   brew install puma/puma/puma-dev
-  brew install docker
+
+  # docker
+  # brew install docker
   # brew install docker-compose
   # brew install docker-machine
   # brew install xhyve
   # brew install docker-machine-driver-xhyve
   # brew install boot2docker
-
-  # NET UTILS
-  brew tap ZloeSabo/homebrew-nettools
-
-  brew install httplab
-  brew install wuzz
-
-  # pngout
-  brew tap jonof/kenutils
-
-  brew install/pngout
 
   # WEBFONT TOOLS
   running "Installing webfont tools"
@@ -235,31 +216,23 @@ if $brewinstall; then
 
   # General
   brew cask install caffeine
-  brew cask install discord
   brew cask install diskwave
   brew cask install dropbox
   brew cask install firefox
+  brew cask install g-desktop-suite
   brew cask install google-chrome
   brew cask install grammarly
   brew cask install iterm2
-  brew cask install licecap
-  brew cask install macdown
-  brew cask install oversight
-  brew cask install rocket
   brew cask install slack
-  brew cask install slite
   brew cask install spectacle
   brew cask install spotify
   brew cask install vlc
-  brew cask install zoomus
+  # brew cask install zoomus
 
   # Design
   brew cask install abstract
-  brew cask install fontbase
-  brew cask install framer
-  brew cask install iconjar
-  brew cask install sketch
-  brew cask install zeplin
+  # brew cask install sketch
+  # brew cask install zeplin
 
   # Development
   brew cask install dash
@@ -269,12 +242,10 @@ if $brewinstall; then
   brew cask install imageoptim
   brew cask install ngrok
   brew cask install sequel-pro
-  # brew cask install sublime-text
   brew cask install visual-studio-code
 
   # DevOps
   brew cask install aws-vault
-  brew cask install sequel-pro
 
   # VM
   # brew cask install virtualbox
@@ -290,15 +261,15 @@ if $brewinstall; then
   # brew cask install betterzipql
   # brew cask install qlimagesize
   brew cask install webpquicklook
-  brew cask install suspicious-package
+  # brew cask install suspicious-package
   brew cask install quicklookase
   brew cask install qlvideo
 
   # Install Mac App Store Applications.
   # requires: brew install mas
-  mas install 1254981365 # Contrast
-  mas install 1234952668 # FlagTimes
-  mas install 1225570693 # Ulysses
+  # mas install 1254981365 # Contrast
+  # mas install 1234952668 # FlagTimes
+  # mas install 1225570693 # Ulysses
   # TODO: install pixelsnap
 
   running "brew cleanup"
