@@ -31,7 +31,7 @@ if $brewinstall; then
     # note: if your /usr/local is locked down (like at Google), you can do this to place everything in ~/.homebrew
     # mkdir "$HOME/.homebrew" && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
     # then add this to your path: export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     print_result $? 'Install Homebrew.'
   else
@@ -57,7 +57,7 @@ if $brewinstall; then
   # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
   brew install findutils
   # Install GNU `sed`, overwriting the built-in `sed`.
-  brew install gnu-sed --with-default-names
+  brew install gnu-sed # add to path
 
   # Install Bash 4.
   # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
@@ -76,14 +76,15 @@ if $brewinstall; then
   brew install zsh-completion
 
   # Install `wget` with IRI support.
-  brew install wget --with-iri
+  brew install wget
 
   # Install GnuPG to enable PGP-signing commits.
   brew install gnupg
+  brew install pinentry-mac
 
   # Install more recent versions of some native macOS tools.
   brew install perl
-  brew install vim --with-override-system-vi
+  brew install vim # add to path
   brew install grep
   brew install nano
   brew install openssh
@@ -113,7 +114,6 @@ if $brewinstall; then
   brew install hub
   brew install icdiff
   brew install jq
-  brew install m
   brew install mas
   brew install mtr
   brew install ngrep
@@ -126,7 +126,6 @@ if $brewinstall; then
   brew install reattach-to-user-namespace
   brew install rename
   brew install roundup
-  brew install spaceman-diff
   brew install spark
   brew install speedtest-cli
   brew install ssh-copy-id
@@ -134,7 +133,6 @@ if $brewinstall; then
   brew install the_silver_searcher
   brew install trash-cli
   brew install tree
-  brew install unrar
   brew install vbindiff
   brew install wifi-password
   brew install zopfli
@@ -157,9 +155,11 @@ if $brewinstall; then
 
   # DATABASES
   brew install postgresql
-  brew install mongodb
   brew install mysql@5.7
   brew install redis
+
+  brew tap mongodb/brew
+  brew install mongodb-community
 
   # DEVOPS
   brew install awscli
@@ -186,14 +186,12 @@ if $brewinstall; then
   # FONTS
   running "Installing fonts"
 
-  brew tap caskroom/fonts
+  brew tap homebrew/cask-fonts
+  brew install svn # needed for google fonts
 
   brew cask install font-domine
-  brew cask install font-droid-sans
-  brew cask install font-droid-sans-mono
   brew cask install font-fira-code
   brew cask install font-fira-sans
-  brew cask install font-fontawesome
   brew cask install font-inconsolata
   brew cask install font-lato
   brew cask install font-open-sans
@@ -205,13 +203,13 @@ if $brewinstall; then
   running "Installing cask apps"
 
   # APPLICATIONS
-  brew tap caskroom/cask
-  brew tap caskroom/versions
+  brew tap homebrew/cask
+  brew tap homebrew/cask-versions
 
   # Security
   brew cask install dashlane
   brew cask install keybase
-  brew cask install gpgtools
+  brew cask install gpg-suite
   brew cask install tunnelblick
 
   # General
@@ -223,11 +221,12 @@ if $brewinstall; then
   brew cask install google-chrome
   brew cask install grammarly
   brew cask install iterm2
+  brew cask install rectangle
   brew cask install slack
-  brew cask install spectacle
+  # brew cask install spectacle
   brew cask install spotify
   brew cask install vlc
-  # brew cask install zoomus
+  brew cask install zoomus
 
   # Design
   brew cask install abstract
