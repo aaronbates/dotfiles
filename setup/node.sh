@@ -34,6 +34,7 @@ if hash asdf 2>/dev/null; then
     dependency-cruiser
     doctoc
     eslint
+    fast-folder-size
     git-open
     git-recent
     gzip-size-cli
@@ -54,9 +55,7 @@ if hash asdf 2>/dev/null; then
     stylelint-config-standard
     surge
     svgo
-    trash-cli
     viewport-list-cli
-    vtop
     @vue/cli
   )
 
