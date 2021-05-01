@@ -2,6 +2,11 @@
 
 alias aliases="vim $HOME/.aliases"
 
+# Always enable colored `grep` output`
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -104,6 +109,7 @@ alias update='\
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
+alias chromenocors='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir="$HOME/tmp/james_bonds_browser" --disable-web-security -h &'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

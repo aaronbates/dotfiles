@@ -290,3 +290,8 @@ function extract() {
     echo "'$1' is not a valid file"
   fi
 }
+
+# npm-diff web-vitals-element 1.0.0 1.0.1
+function npm-diff() {
+  npm diff --diff=$1@$2 --diff=$1@$3 | delta --width $(tput cols) | less
+}

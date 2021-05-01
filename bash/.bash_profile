@@ -44,12 +44,12 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null;
 done;
 
-[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 # import homebrew bash-completions
-source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash";
+source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 source "$(brew --prefix)/etc/bash_completion.d/brew"
-source "$(brew --prefix)/etc/bash_completion.d/gibo-completion.bash";
+source "$(brew --prefix)/etc/bash_completion.d/gibo-completion.bash"
 source "$(brew --prefix)/etc/bash_completion.d/git-completion.bash"
 
 # Enable tab completion for `g` by marking it as an alias for `git`.
@@ -59,6 +59,12 @@ complete -o default -o nospace -F _git g;
 if hash awscli 2>/dev/null && [ -f /usr/local/bin/aws_completer ]; then
   complete -C '/usr/local/bin/aws_completer' aws
 fi;
+
+# Config SSH to use gpg-agent
+# https://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+#ps -p $SSH_AGENT_PID > /dev/null || eval "$(ssh-agent -s)"
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards.
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
@@ -79,7 +85,7 @@ zpath="$(brew --prefix)/etc/profile.d/z.sh"
 bind Space:magic-space
 
 # asdf
-source "$(brew --prefix asdf)/asdf.sh";
+source $(brew --prefix asdf)/asdf.sh
 
 # pyevnv
 if hash pyenv 2>/dev/null; then

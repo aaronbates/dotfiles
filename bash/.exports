@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 export CODE_DIR="$HOME/code";
 
 # Dotfiles
@@ -55,9 +57,6 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
-
-# Always enable colored `grep` output.
-export GREP_OPTIONS='--color=auto';
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656

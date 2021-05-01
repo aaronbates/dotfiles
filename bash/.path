@@ -3,6 +3,10 @@
 # Build, dedupe and then export PATH.
 PATH="$HOME/bin"
 PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:/usr/local/opt/findutils/libexec/gnubin"
+PATH="$PATH:/usr/local/opt/grep/libexec/gnubin"
+PATH="$PATH:/usr/local/opt/openssl@1.1/bin"
+PATH="$PATH:/usr/local/opt/ssh-copy-id/bin"
 PATH="$PATH:/usr/local/bin"
 PATH="$PATH:/usr/bin"
 PATH="$PATH:/bin"
